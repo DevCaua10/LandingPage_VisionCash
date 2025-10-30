@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VisionMoney - A Revolução na Independência Financeira</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            background-color: #000000;
+            color: #ffffff;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #000000 0%, #0a3d19 100%);
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(10, 168, 68, 0.7);
+            }
+            70% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 15px rgba(10, 168, 68, 0);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(10, 168, 68, 0);
+            }
+        }
+        
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .scanner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #0aa844, transparent);
+            animation: scan 2.5s linear infinite;
+            border-radius: 2px;
+            box-shadow: 0 0 10px #0aa844;
+        }
+
+        @keyframes scan {
+            0% { top: 0; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.5s ease-in;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 1s ease-out;
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .slide-in-right {
+            animation: slideInRight 1s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        .btn-glow:hover {
+            box-shadow: 0 0 15px #0a3d19;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(10, 168, 68, 0.3);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #0a3d19, #0aa844);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Header -->
+    <header class="hero-gradient py-6 px-4 md:px-12 lg:px-24">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-money-bill-wave text-green-500 text-3xl mr-2"></i>
+                <h1 class="text-2xl font-bold text-white">Vision<span class="text-green-500">Cash</span></h1>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-8">
+                    <li><a href="#features" class="text-white hover:text-green-400 transition duration-300">Recursos</a></li>
+                    <li><a href="#how-it-works" class="text-white hover:text-green-400 transition duration-300">Como Funciona</a></li>
+                    <li><a href="#testimonials" class="text-white hover:text-green-400 transition duration-300">Depoimentos</a></li>
+                    <li><a href="#contact" class="text-white hover:text-green-400 transition duration-300">Contato</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient py-16 md:py-24 px-4 md:px-12 lg:px-24">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0 slide-in-left">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    <span class="text-white">Independência financeira</span> 
+                    <span class="text-gradient">sem barreiras</span>
+                </h2>
+                <p class="text-lg md:text-xl text-gray-300 mb-8">
+                    A primeira máquina que identifica e anuncia o valor de notas em tempo real, 
+                    dando autonomia e confiança para pessoas com deficiência visual.
+                </p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 btn-glow">
+                        Demonstração <i class="fas fa-play ml-2"></i>
+                    </button>
+                    <button class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-black font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        Saiba Mais <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center slide-in-right">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-green-500 rounded-3xl opacity-20 blur-lg"></div>
+                    <div class="relative w-full max-w-md overflow-hidden p-12">
+                        <i class="fab fa-bitcoin text-green-500 text-9xl mx-auto block float pulse"></i>
+                        <div class="scanner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 md:py-24 px-4 md:px-12 lg:px-24 bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-white">Tecnologia que</span> 
+                    <span class="text-gradient">transforma vidas</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Desenvolvida com as mais avançadas tecnologias para proporcionar independência e segurança financeira.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="feature-card bg-gray-900 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Identificação Instantânea</h3>
+                    <p class="text-gray-400">
+                        Reconhece qualquer nota em menos de 1 segundo com precisão de 99.9%, anunciando o valor em voz alta e clara.
+                    </p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="feature-card bg-gray-900 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-hand-holding-usd text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Multi-Moedas</h3>
+                    <p class="text-gray-400">
+                        Compatível com diversas moedas internacionais, perfeito para viajantes ou quem lida com câmbio frequentemente.
+                    </p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="feature-card bg-gray-900 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-battery-full text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Bateria de Longa Duração</h3>
+                    <p class="text-gray-400">
+                        Até 30 dias de uso contínuo com uma única carga. Carregamento rápido via USB-C.
+                    </p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="feature-card bg-gray-900 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-microphone-alt text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Voz Personalizável</h3>
+                    <p class="text-gray-400">
+                        Escolha entre diferentes vozes e idiomas. Volume ajustável para diferentes ambientes.
+                    </p>
+                </div>
+                
+                <!-- Feature 5 -->
+                <div class="feature-card bg-gray-900 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-lock text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">Segurança Máxima</h3>
+                    <p class="text-gray-400">
+                        Detecta notas falsas com tecnologia avançada de espectroscopia e padrões de segurança.
+                    </p>
+                </div>
+                
+                <!-- Feature 6 -->
+                <div class="feature-card bg-gray-900 p-8 rounded-xl">
+                    <div class="w-16 h-16 bg-green-900 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-white">App Companion</h3>
+                    <p class="text-gray-400">
+                        Conecte-se via Bluetooth para histórico de transações, configurações avançadas e atualizações.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 md:py-24 px-4 md:px-12 lg:px-24 hero-gradient">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-white">Simples como</span> 
+                    <span class="text-gradient">1, 2, 3</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">
+                    Tecnologia avançada com usabilidade intuitiva para todos.
+                </p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-green-500 rounded-3xl opacity-20 blur-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="Money bill" 
+                             class="relative w-full max-w-md rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <!-- Step 1 -->
+                    <div class="flex mb-8">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl">
+                                1
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white">Insira a Nota</h3>
+                            <p class="text-gray-300">
+                                Basta colocar a nota no slot de identificação. O dispositivo reconhece automaticamente a posição e orientação.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex mb-8">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl">
+                                2
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white">Análise Rápida</h3>
+                            <p class="text-gray-300">
+                                Nossa tecnologia patenteada escaneia a nota em milissegundos, verificando autenticidade e valor.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex">
+                        <div class="flex-shrink-0 mr-6">
+                            <div class="flex items-center justify-center w-12 h-12 rounded-full bg-green-500 text-black font-bold text-xl">
+                                3
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold mb-2 text-white">Resultado Imediato</h3>
+                            <p class="text-gray-300">
+                                O valor é anunciado claramente em voz alta. Opcionalmente, vibra para confirmar o valor.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 md:py-24 px-4 md:px-12 lg:px-24 bg-black">
+        <div class="container mx-auto">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">
+                    <span class="text-white">Vidas</span> 
+                    <span class="text-gradient">transformadas</span>
+                </h2>
+                <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                    Histórias reais de pessoas que recuperaram sua independência financeira.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-900 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 alt="Carlos Silva" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Carlos Silva</h4>
+                            <p class="text-green-400">Professor</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Depois de perder a visão, lidar com dinheiro se tornou um pesadelo. O VisionMoney me devolveu a confiança para fazer compras sozinho. Finalmente posso conferir meu troco sem depender de ninguém!"
+                    </p>
+                    <div class="mt-4 text-green-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-900 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                                 alt="Ana Beatriz" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Ana Beatriz</h4>
+                            <p class="text-green-400">Empresária</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Como dona de um pequeno café, sempre precisei confiar nos funcionários para lidar com o caixa. Com o VisionMoney, tenho controle total sobre meu negócio novamente. A detecção de notas falsas é incrível!"
+                    </p>
+                    <div class="mt-4 text-green-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-900 p-8 rounded-xl">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 rounded-full overflow-hidden mr-4">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=688&q=80" 
+                                 alt="Mariana Oliveira" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-white">Mariana Oliveira</h4>
+                            <p class="text-green-400">Estudante</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 italic">
+                        "Nasci com baixa visão e sempre dependi dos outros para saber quanto dinheiro tinha. Agora, com meu VisionMoney, posso sair com amigos sem constrangimentos. É libertador!"
+                    </p>
+                    <div class="mt-4 text-green-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 md:py-24 px-4 md:px-12 lg:px-24 hero-gradient">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                Pronto para experimentar a <span class="text-gradient">liberdade financeira</span>?
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                Agende uma demonstração gratuita em nosso estande na feira ou entre em contato para mais informações.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-green-500 hover:bg-green-600 text-black font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105 btn-glow">
+                    Agendar Demonstração <i class="fas fa-calendar-check ml-2"></i>
+                </button>
+                <button class="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-black font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Fale Conosco <i class="fas fa-comment-dots ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 px-4 md:px-12 lg:px-24 bg-black">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6 text-white">
+                        Visite nosso <span class="text-gradient">estande</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-8">
+                        Estamos na Feira Internacional de Tecnologia Assistiva, stand B-42.
+                    </p>
+                    
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold mb-4 text-white">Horário de Funcionamento:</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-calendar-day text-green-500 mr-3"></i>
+                                15 a 20 de Outubro, 2023
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-clock text-green-500 mr-3"></i>
+                                10:00 às 19:00
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-white">Contato Rápido:</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt text-green-500 mr-3"></i>
+                                +55 (11) 98765-4321
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope text-green-500 mr-3"></i>
+                                contato@visionmoney.com
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fab fa-whatsapp text-green-500 mr-3"></i>
+                                WhatsApp: +55 (11) 98765-4321
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 md:pl-12">
+                    <h3 class="text-2xl font-bold mb-6 text-white">Deixe sua mensagem</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="name" class="block text-gray-400 mb-2">Nome</label>
+                            <input type="text" id="name" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-400 mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="
+</html>
